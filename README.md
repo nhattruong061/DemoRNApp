@@ -1,2 +1,2 @@
 # DemoRNApp
-demo a react native app
+Make for demo a react native app
