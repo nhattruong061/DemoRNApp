@@ -116,7 +116,7 @@ class Login extends Component {
           title="Submit"
           buttonStyle={styles.submitButton}
           // onPress={this.onSubmit}
-          onPress={() => this.props.navigation.navigate("Map")}
+          onPress={() => this.props.navigation.navigate("Explore")}
         />
 
         <Button

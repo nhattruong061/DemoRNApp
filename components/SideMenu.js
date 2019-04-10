@@ -92,7 +92,7 @@ class SideMenu extends Component {
                     alignSelf:'center',
                     marginBottom: 20
                   }}>
-                    SkateSense
+                    DemoRNApp
                 </Text>
 
                <ScrollView>
