@@ -1,11 +1,11 @@
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from "react-native";
 
 const deviceStorage = {
   async saveItem(key, value) {
     try {
-      await AsyncStorage.setItem(key, value)
+      await AsyncStorage.setItem(key, value);
     } catch (error) {
-      console.log('AsyncStorage saveItem Error: ' + error.message);
+      console.log("AsyncStorage saveItem Error: " + error.message);
     }
   },
 
@@ -13,24 +13,23 @@ const deviceStorage = {
     try {
       const value = await AsyncStorage.getItem(key);
       if (value !== null) {
-        return value
+        return value;
       } else {
-        console.log('There are no tokens for u')
+        console.log("There are no tokens for u");
       }
     } catch (error) {
-      console.log('AsyncStorage loadJWT Error: ' + error.message);
+      console.log("AsyncStorage loadJWT Error: " + error.message);
     }
   },
 
-  async removeJWT(key){
-    try{
-      await AsyncStorage.removeItem(key)
-      console.log('storage has been cleared!');
+  async removeJWT(key) {
+    try {
+      await AsyncStorage.removeItem(key);
+      console.log("storage has been cleared!");
     } catch (error) {
-      console.log('AsyncStorage clearJWT Error: ' + error.message);
+      console.log("AsyncStorage clearJWT Error: " + error.message);
     }
   }
-
-}
+};
 
 export default deviceStorage;
