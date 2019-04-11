@@ -6,16 +6,16 @@ import {
   createAppContainer,
   createDrawerNavigator} from "react-navigation";
 
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import SideMenu from "./components/SideMenu.js";
-import HomeScreen from "./containers/Home";
-import MatchesScreen from "./containers/Matches";
-import MessagesScreen from "./containers/Messages";
-import ProfileScreen from "./containers/Profile";
+import Login from "./src/components/Login";
+import SignUp from "./src/components/SignUp";
+import SideMenu from "./src/components/SideMenu.js";
+import HomeScreen from "./src/containers/Home";
+import MatchesScreen from "./src/containers/Matches";
+import MessagesScreen from "./src/containers/Messages";
+import ProfileScreen from "./src/containers/Profile";
+import store from "./src/store/store";
 
 import { Provider } from "react-redux";
-import store from "./store";
 
 console.disableYellowBox = true;
 

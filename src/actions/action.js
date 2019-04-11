@@ -1,5 +1,5 @@
-import deviceStorage from "./deviceStorage.js";
-import environment from "./environment.js";
+import deviceStorage from "../../deviceStorage.js";
+import environment from "../../environment.js";
 
 export const createUser = (
   username,

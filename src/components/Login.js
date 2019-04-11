@@ -10,7 +10,7 @@ import {
 import { Input, Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { withNavigation } from "react-navigation";
-import { loginUser } from "../action.js";
+import { loginUser } from "../actions/action";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import {

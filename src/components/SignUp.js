@@ -11,7 +11,7 @@ import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Input, Button, ThemeProvider } from "react-native-elements";
 import { withNavigation } from "react-navigation";
-import { createUser } from "../action.js";
+import { createUser } from "../actions/action";
 import { connect } from "react-redux";
 import { compose } from "redux";
 

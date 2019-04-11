@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import ProfileItem from "../components/ProfileItem";
-import Demo from "../assets/data/demo.js";
+import Demo from "../../assets/data/demo";
 
 class Profile extends React.Component {
   static navigationOptions = {
@@ -18,7 +18,7 @@ class Profile extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require("../assets/images/bg.png")}
+        source={require("../../assets/images/bg.png")}
         style={styles.bg}
       >
         <ScrollView style={styles.container}>

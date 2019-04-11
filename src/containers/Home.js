@@ -4,7 +4,7 @@ import CardStack, { Card } from "react-native-card-stack-swiper";
 import City from "../components/City";
 import Filters from "../components/Filters";
 import CardItem from "../components/CardItem";
-import Demo from "../assets/data/demo.js";
+import Demo from "../../assets/data/demo";
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -18,7 +18,7 @@ class Home extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require("../assets/images/bg.png")}
+        source={require("../../assets/images/bg.png")}
         style={styles.bg}
       >
         <View style={styles.container}>

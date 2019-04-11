@@ -1,19 +1,14 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableHighlight,
-  ScrollView,
-  PropTypes
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
+
 import { NavigationActions, withNavigation } from "react-navigation";
-import { Icon, Button, Divider, ListItem, Header } from "react-native-elements";
-import deviceStorage from "../deviceStorage.js";
+import { Divider, ListItem } from "react-native-elements";
+
+import deviceStorage from "../../deviceStorage";
+import { logoutUser } from "../actions/action";
+
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { logoutUser } from "../action.js";
 
 const list = [
   {

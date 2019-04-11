@@ -2,43 +2,46 @@ import React from "react";
 import {
   StyleSheet,
   ScrollView,
+  View,
   Text,
   TouchableOpacity,
   ImageBackground,
   Dimensions,
-  View,
   FlatList
 } from "react-native";
-import Message from "../components/Message";
-import Demo from "../assets/data/demo.js";
+import CardItem from "../components/CardItem";
+import Demo from "../../assets/data/demo";
 
-class Messages extends React.Component {
+class Matches extends React.Component {
   static navigationOptions = {
     header: null
   };
+
   render() {
     return (
       <ImageBackground
-        source={require("../assets/images/bg.png")}
+        source={require("../../assets/images/bg.png")}
         style={styles.bg}
       >
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.top}>
-              <Text style={styles.title}>Messages</Text>
+              <Text style={styles.title}>Matches</Text>
               <TouchableOpacity>
                 <Text style={styles.icon}>&#xf142;</Text>
               </TouchableOpacity>
             </View>
 
             <FlatList
+              numColumns={2}
               data={Demo}
               renderItem={({ item }) => (
                 <TouchableOpacity>
-                  <Message
+                  <CardItem
                     image={item.image}
                     name={item.name}
-                    lastMessage={item.message}
+                    status={item.status}
+                    variant
                   />
                 </TouchableOpacity>
               )}
@@ -79,4 +82,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Messages;
+export default Matches;
