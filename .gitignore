@@ -2,3 +2,7 @@
 node_modules
 ios/Pods
 ios/build
+.expo
+.vs
+android/.gradle
+android/.idea

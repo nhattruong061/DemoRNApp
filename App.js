@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { StyleSheet, Text } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import {
   createBottomTabNavigator,
   createStackNavigator,
   createAppContainer,
   createDrawerNavigator} from "react-navigation";
+import { AppLoading, Font } from 'expo';
 
 import Login from "./src/components/Login";
 import SignUp from "./src/components/SignUp";
@@ -16,7 +17,6 @@ import ProfileScreen from "./src/containers/Profile";
 import store from "./src/store/store";
 
 import { Provider } from "react-redux";
-
 console.disableYellowBox = true;
 
 const RootStack = createStackNavigator(
@@ -34,6 +34,30 @@ const RootStack = createStackNavigator(
     }
   }
 );
+
+
+// export default class App extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text>Open up App.js to start working on your app!</Text>
+//       </View>
+//     );
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
+
+
+
+
 
 const Drawer = createBottomTabNavigator(
   {
@@ -94,7 +118,7 @@ const Drawer = createBottomTabNavigator(
       style: {
         backgroundColor: "#FFF",
         borderTopWidth: 0,
-        paddingVertical: 30,
+        // paddingVertical: 30,
         height: 60,
         marginBottom: 0,
         shadowOpacity: 0.05,
@@ -135,7 +159,7 @@ const PrimaryNav = createStackNavigator(
 const styles = StyleSheet.create({
   tabButton: {
     paddingTop: 20,
-    paddingBottom: 30,
+    paddingBottom: 20,
     alignItems: "center",
     justifyContent: "center",
     flex: 1
@@ -146,14 +170,36 @@ const styles = StyleSheet.create({
   icon: {
     fontFamily: "tinderclone",
     height: 20,
-    paddingBottom: 7
+    paddingTop: 7
   }
 });
 
 const AppContainer = createAppContainer(PrimaryNav);
 
-class App extends Component {
+class App extends React.Component {
+  state = {
+    isReady: false,
+  };
+  async componentDidMount() {
+    await Font.loadAsync(
+      'tinderclone',
+      // eslint-disable-next-line
+      require('./assets/fonts/tinderclone.ttf')
+    );
+
+    await Font.loadAsync(
+      'Lobster',
+      // eslint-disable-next-line
+      require('./assets/fonts/Lobster-Regular.ttf')
+    );
+    // eslint-disable-next-line
+    this.setState({ isReady: true });
+  }
   render() {
+    const {isReady } = this.state;
+    if (!isReady) {
+      return <AppLoading />;
+    }
     return (
       <Provider store={store}>
         <AppContainer />
